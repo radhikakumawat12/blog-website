@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Growth Blogs</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div class="landing-page" style="display:grid">
+        <div class="overlay">
+            <h1>Forever Growing</h1>
+            <button onclick="navigateToBlogs()">Dive In 🍁</button>
+        </div>
+    </div>
+    
+    <!-- Blog Page (Hidden by default, shown after navigation) -->
+    <div class="blog-page" style="display: none;">
+        <nav>
+            <button onclick="navigateTolandingpage()">Back ◀️</button>
+        </nav> 
+        
+            <h1 id="moto">Ink your imagination, one blog at a time</h1>
+    
+        
+        <div class="blog-container">
+            <div class="blog-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf2lkGCsPay7g4tIUGVhlrT97xWNxRs2zlrw&s" alt="Blog 1">
+                <h2>Passion led us here</h2>
+                <p>Blogs have become a popular platform for sharing experiences, knowledge, and advice. And when it comes to personal development, personal growth blogs can be a great source of inspiration and guidance </p>
+                <button class="toggle-content" onclick="toggleContent(this)">Read More</button>
+                <!-- for full content -->
+                <div class="full-content"> 
+                    <p>Blogs have become a popular platform for sharing experiences, knowledge, and advice. And when it comes to personal development, personal growth blogs can be a great source of inspiration and guidance......</p> 
+                </div>
+                <button class="delete-btn" onclick="deleteBlog(this)">Delete</button>
+            </div>
+
+            <div class="blog-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQZ24dI7gp5uwqtauHHMetmd9dMool4EpLwg&s" alt="Blog 2">
+                <h2>Why Is It So Hard to Say No?</h2>
+                <p>Saying no can be challenging due to various psychological and social factors.Saying no can be challenging due to various psychological and social factors. </p>
+                
+                <button class="toggle-content" onclick="toggleContent(this)">Read More</button>
+                <!-- for full content -->
+                <div class="full-content"> 
+                    <p>Blogs have become a popular platform for sharing experiences, knowledge, and advice. And when it comes to personal development, personal growth blogs can be a great source of inspiration and guidance.....</p> 
+                </div>
+                <button class="delete-btn" onclick="deleteBlog(this.blog-card)">Delete</button>
+            </div>
+
+            <div class="blog-card">
+                <img src="https://webusupload.apowersoft.info/lightpdf/wp-content/uploads/2019/11/positivity-website.jpg.webp" alt="Blog 3">
+                <h2>Stop comparing yourself</h2>
+                <p>"Discover three simple steps to stop comparing yourself to others and embrace your unique journey. Learn to focus on your own strengths, appreciate your accomplishments, and cultivate ....."</p>
+                <button class="toggle-content" onclick="toggleContent(this.blogCard)">Read More</button>
+                <!-- for full content -->
+                <div class="full-content"> 
+                    <p>Blogs have become a popular platform for sharing experiences, knowledge, and advice. And when it comes to personal development, personal growth blogs can be a great source of inspiration and guidance......</p> 
+                </div>
+                <button class="delete-btn" onclick="deleteBlog(this.blogCard)">Delete</button>
+            </div>
+        </div>
+        <!-- Add this inside the blog-page div -->
+<button class="add-blog-btn" onclick="openBlogForm()">+</button>
+
+<div id="blogFormModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeBlogForm()">&times;</span>
+        
+        <h2>Create New Blog 🔖</h2>
+        <form id="blogForm">
+            <label for="blogTitle">Title</label>
+            <input type="text" id="blogTitle" placeholder="Enter Blog Title" required>
+            
+            <label for="blogImage">Image URL</label>
+            <input type="text" id="blogImage" placeholder="Enter Image URL" required>
+            
+            <label for="blogDescription">Description</label>
+            <textarea id="blogDescription" placeholder="Enter Blog Description" required></textarea>
+            
+            <button type="button" onclick="submitBlog()">Post Blog</button>
+            
+        </form>
+    </div>
+</div>
+
+    </div>
+
+    <script src="blog.js"></script>
+</body>
+</html>
